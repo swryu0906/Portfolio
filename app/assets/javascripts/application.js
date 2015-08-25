@@ -14,4 +14,6 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require OpeningSequence/modernizr.custom
+//= require OpeningSequence/jquery.lettering
 //= require_tree .
