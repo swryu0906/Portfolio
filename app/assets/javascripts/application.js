@@ -14,6 +14,8 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require fullPage/jquery.easings.min
+//= require fullPage/scrolling-nav
 //= require OpeningSequence/modernizr.custom
 //= require OpeningSequence/jquery.lettering
 //= require_tree .

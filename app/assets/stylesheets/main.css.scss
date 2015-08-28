@@ -1,8 +1,9 @@
-html, body {
+html, body, header {
 	height: 100%;
 }
 
 body {
+	position: relative;
 	color: #6c6c6c;
 	background-color: #f2f2f2;
 }
@@ -21,10 +22,11 @@ a, a:hover {
 
 // Nav
 
+
 .navbar {
 	position: absolute;
 	z-index: 100;
-	top: 50px;
+	top: 40px;
 	left: 0;
 	right: 0;
     font-size: 1em;
@@ -60,7 +62,7 @@ a, a:hover {
 	background-color: transparent;
 	border: 0;
 	.navbar-brand {
-		font-size: 2.0em;
+		font-size: 1.713em;
 		font-weight: 600;
 		color: #fff;
 	}
@@ -73,35 +75,39 @@ a, a:hover {
 
 // Header
 
-.page-trans-in {
-    height: 100%;
-    z-index: 1;
-    position: relative;
-	
-}
-
-
 
 header {
-	position: ralative;
+	position: relative;
 	top: 0;
 	left: 0;
 	height: 100%;
 	width: 100%;
 	overflow: hidden;
-	.content {
+	.heading {
 		position: relative;
 		margin: 0 auto;
 		color: #fff;
+		h1 {
+			margin-top: 0;
+		}
+		hr {
+			width: 400px;
+		}
+		h4{
+			font-size: 1.72em;
+		}
 	}
-	h1 {
-		margin-top: 0;
-	}
-	hr {
-		width: 400px;
-	}
-	h4{
-		font-size: 1.72em;
+	.guide {
+		color: #fff;
+	 	position: absolute;
+		bottom: 0%;
+		left: 50%;
+		-webkit-transform: translate(-50%, 0);
+	    -moz-transform: translate(-50%, 0);
+	    -ms-transform: translate(-50%, 0);
+	    -o-transform: translate(-50%, 0);
+	    transform: translate(-50%, 0);
+		
 	}
 }
 
@@ -114,6 +120,8 @@ header {
     -o-transform: translate(0, -50%);
     transform: translate(o, -50%);
 }
+
+ 
 
 .animation-fade-in-y {
 	/* Chrome, Safari, Opera */
@@ -253,6 +261,7 @@ header {
 
 
 sectioin {
+	min-height: 100%;
 	position: relative;
 }
 
