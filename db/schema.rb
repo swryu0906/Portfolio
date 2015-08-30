@@ -27,11 +27,7 @@ ActiveRecord::Schema.define(version: 20150829210258) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "category_id"
-    t.string   "image_1"
-    t.string   "image_2"
-    t.string   "image_3"
-    t.string   "image_4"
-    t.string   "image_5"
+    t.string   "image_bg"
   end
 
   add_index "projects", ["category_id"], name: "index_projects_on_category_id"
