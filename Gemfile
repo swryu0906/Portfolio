@@ -36,5 +36,9 @@ group :production do
 	gem 'pg'
 end
 
-# Carrierwave
+# Carrierwave & Fog
 gem 'carrierwave', '~> 0.10.0'
+gem 'fog', '~> 1.33.0'
+
+# Figaro
+gem 'figaro', '~> 1.1.1'
