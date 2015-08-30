@@ -42,3 +42,6 @@ gem 'fog', '~> 1.33.0'
 
 # Figaro
 gem 'figaro', '~> 1.1.1'
+
+# Mini Magick
+gem 'mini_magick', '~> 4.2.10'
