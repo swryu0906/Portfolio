@@ -76,30 +76,38 @@ a, a:hover {
 // Header
 
 
-header {
-	position: relative;
-	top: 0;
-	left: 0;
+.screen-wrapper {
 	height: 100%;
-	width: 100%;
-	overflow: hidden;
-	.heading {
-		position: relative;
-		margin: 0 auto;
-		color: #fff;
-		h1 {
-			margin-top: 0;
-		}
-		hr {
-			width: 400px;
-		}
-		h4{
-			font-size: 1.72em;
+}
+
+header {
+	.screen-wrapper {
+		position: absolute;
+		z-index: 0;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		.heading {
+			position: relative;
+			margin: 0 auto;
+			color: #fff;
+			h1 {
+				margin-top: 0;
+			}
+			hr {
+				width: 400px;
+			}
+			h4{
+				font-size: 1.72em;
+			}
 		}
 	}
 	.guide {
 		color: #fff;
 	 	position: absolute;
+	 	z-index: initial;
 		bottom: 0%;
 		left: 50%;
 		-webkit-transform: translate(-50%, 0);

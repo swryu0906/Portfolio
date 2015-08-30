@@ -1,24 +1,40 @@
-<p id="notice"><%= notice %></p>
+<header id="header-projects">
+  
+	<div class="heading center-vertical">
 
-<p>
-  <strong>Name:</strong>
-  <%= @project.name %>
-</p>
+		<div class="container">
 
-<p>
-  <strong>Description:</strong>
-  <%= @project.description %>
-</p>
+			<%= image_tag @project.image_1 %>
+			
+			<p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Details:</strong>
-  <%= @project.details %>
-</p>
+			<p>
+				<strong>Name:</strong>
+				<%= @project.name %>
+			</p>
 
-<p>
-  <strong>Url:</strong>
-  <%= @project.url %>
-</p>
+			<p>
+				<strong>Description:</strong>
+				<%= @project.description %>
+			</p>
 
-<%= link_to 'Edit', edit_project_path(@project) %> |
-<%= link_to 'Back', projects_path %>
+			<p>
+				<strong>Details:</strong>
+				<%= @project.details %>
+			</p>
+
+			<p>
+				<strong>Url:</strong>
+				<%= @project.url %>
+			</p>
+
+			<%= link_to 'Edit', edit_project_path(@project) %> |
+			<%= link_to 'Back', projects_path %>
+		
+		</div><!-- /.container -->
+       
+	</div>
+
+	<%= render 'shared/link' %>
+
+</header>

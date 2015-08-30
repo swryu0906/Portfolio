@@ -1,3 +1,3 @@
 class Category < ActiveRecord::Base
-	has many :projects
+	has_many :projects
 end
