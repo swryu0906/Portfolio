@@ -1,7 +1,10 @@
 Rails.application.routes.draw do
-  resources :images, except: [:index, :show]
   devise_for :users
-  resources :projects
+  
+  resources :projects do
+    resources :images, except: [:index, :show]
+  end
+
   root 'pages#welcome'
   get 'blog' => 'pages#blog'
   get 'about' => 'pages#about'

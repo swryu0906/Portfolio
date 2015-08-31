@@ -1,6 +1,7 @@
 class ImagesController < ApplicationController
+  #before_action :authenticate_user!
   before_action :set_image, only: [:edit, :update, :destroy]
-
+  before_action :set_project
 
   # GET /images/new
   def new
@@ -15,6 +16,7 @@ class ImagesController < ApplicationController
   # POST /images.json
   def create
     @image = Image.new(image_params)
+    @image.project_id = @project.id
 
     respond_to do |format|
       if @image.save
@@ -55,6 +57,10 @@ class ImagesController < ApplicationController
     # Use callbacks to share common setup or constraints between actions.
     def set_image
       @image = Image.find(params[:id])
+    end
+
+    def set_project
+      @project = Project.find(params[:project_id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
