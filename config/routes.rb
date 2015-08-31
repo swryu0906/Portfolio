@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  resources :images
+  resources :images, except: [:index, :show]
   devise_for :users
   resources :projects
   root 'pages#welcome'
