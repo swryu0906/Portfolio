@@ -1,10 +1,11 @@
 <header>
 
-	<div class="screen-wrapper" id="header-show" style="background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(<%= @project.image_bg.url %>) no-repeat center center; 
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;">
+	<div class="screen-wrapper" id="header-show" 
+		style="background: linear-gradient( rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3) ), url(<%= @project.image_bg.url %>) no-repeat center center; 
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
+			background-size: cover;">
 	
 		<div class="heading center-vertical text-center">
 		    <h1 class="h1-64 animation-fade-in-y">
@@ -23,12 +24,16 @@
 </header>
 
 
-<section id="contents">
-
-	<div class="screen-wrapper">
+<section id="contents" class="contents">
+	
+	<div class="carousel-multi-frames">
 		
-	<%= render 'shared/carousel_multi_frames' %>
-			
+		<%= render 'shared/carousel_multi_frames' %>
+	
+	</div>
+
+		
+	<div class="screen-wrapper">
 			
 	</div><!--/.screen-wrapper -->
 

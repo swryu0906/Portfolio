@@ -28,7 +28,7 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 
 # Bootsrap
-gem 'bootstrap-sass', '~> 3.3.2.1'
+gem 'bootstrap-sass', '~> 3.3.5.1'
 
 # Heroku deployment settings
 group :production do
