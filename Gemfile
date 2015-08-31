@@ -45,3 +45,6 @@ gem 'figaro', '~> 1.1.1'
 
 # Mini Magick
 gem 'mini_magick', '~> 4.2.10'
+
+# Devise
+gem 'devise', '~> 3.5.2'
