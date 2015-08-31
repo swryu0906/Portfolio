@@ -25,62 +25,62 @@
 
 
 <section id="contents" class="contents">
-	
-	<div class="carousel-multi-frames">
+
+	<!--
+
+	<div class="text-center">
 		
-		<div class="col-md-12">
-		  <div class="carousel slide carousel-multi-frames" id="myCarousel">
-		    <div class="carousel-inner">
+		<h1 class="text-center"><%= @project.name.upcase %><br /><br /></h1>
+		<h4><%= h(@project.description).gsub(/\n/, '<br />').html_safe %></h4>
 
-
-			  <% @images.each do |image| %>
-
-			  	<div class="item <%= (image.id == @images.first.id) ? 'active': '' %>">
-			  		<div class="col-md-4">
-			 			<%= image_tag image.source.url(:small), class: 'img-responsive' %>
-			  		</div> 
-			  	</div>
-
-			  <% end %>
-
-		    </div><!--/.carousel-inner -->
-		    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
-		    <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
-		  </div>
-		</div>
-	
 	</div>
+
+	-->
+	
+	<!--
+	<div class="carousel-multi-frames">
+
+		<div class="container-fluid">
+			<div class="col-md-12">
+		-->	
+	<div class="carousel slide carousel-multi-frames" id="myCarousel">
+
+		
+
+		<div class="carousel-inner">
+
+
+			<% @images.each do |image| %>
+
+				<div class="item <%= (image.id == @images.first.id) ? 'active': '' %>">
+					<div class="col-md-4">
+						<%= image_tag image.source.url(:small), class: 'img-responsive' %>
+					</div> 
+				</div>
+
+			<% end %>
+
+		</div><!--/.carousel-inner -->
+		
+		<a class="left carousel-control" href="#myCarousel" data-slide="prev"> <span class="icon-prev"></span></a>
+		<a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="icon-next"></span></a>
+
+	</div><!--/.carousel-mult-frames -->
+		
+		<!--
+			</div>
+		</div>/.container-fluid 
+	</div>
+		-->
 
 		
 	<div class="screen-wrapper">
-			
-	</div><!--/.screen-wrapper -->
-
 
 		<div class="container">
-		
-		<div class="row">
 			
-		
-
-
-			<!--
-
-			<div class="row">
-				<div class="col-md-4">
-					<%#= image_tag @project.image_1, class: 'img-responsive' %>
-				</div>
-				<div class="col-md-4">
-					<%#= image_tag @project.image_2, class: 'img-responsive' %>
-				</div>
-			<div class="col-md-4">
-					<%#= image_tag @project.image_3, class: 'img-responsive' %>
-				</div>
-			</div>
-
-			-->
 
 			<div class="project-details">
+
 
 				<p>
 					<strong>Name:</strong>
@@ -89,12 +89,52 @@
 
 				<p>
 					<strong>Description:</strong>
-					<%= @project.description %>
+					<%= h(@project.description).gsub(/\n/, '<br />').html_safe %>
 				</p>
 
 				<p>
 					<strong>Details:</strong>
-					<%= @project.details %>
+					<%= h(@project.details).gsub(/\n/, '<br />').html_safe %>
+				</p>
+
+				<p>
+					<strong>Url:</strong>
+					<%= @project.url %>
+				</p>
+
+			</div><!--/.project-details -->
+			
+		</div><!-- /.container -->
+
+        <hr>
+
+
+	</div><!--/.screen-wrapper -->
+
+
+	<% if user_signed_in? %>
+
+
+		<div class="container">
+			
+
+			<div class="project-details">
+
+				<h1 class="text-center">Project Details</h1>
+
+				<p>
+					<strong>Name:</strong>
+					<%= @project.name %>
+				</p>
+
+				<p>
+					<strong>Description:</strong>
+					<%= h(@project.description).gsub(/\n/, '<br />').html_safe %>
+				</p>
+
+				<p>
+					<strong>Details:</strong>
+					<%= h(@project.details).gsub(/\n/, '<br />').html_safe %>
 				</p>
 
 				<p>
@@ -108,7 +148,7 @@
 
 	        <div class="Images">
 	          
-	            <h1>Listing Images</h1>
+	            <h1 class="text-center">Listing Images</h1>
 
 	            <table class="table table-hover table-bordered">
 	              <thead>
@@ -126,7 +166,7 @@
 	                  <tr>
 	                    <td class="text-center"><%= image_tag image.source.url(:thumb), class: 'img-responsive center-block' %></td>
 	                    <td><%= image.name %></td>
-	                    <td><%= image.description %></td>
+	                    <td><%= h(image.description).gsub(/\n/, '<br />').html_safe %></td>
 	                    <td><%= image.source %></td>
 	                    <td><%= link_to 'Edit', edit_project_image_path(@project, image) %></td>
 	                    <td><%= link_to 'Destroy', project_image_path(@project, image), method: :delete, data: { confirm: 'Are you sure?' } %></td>
@@ -147,7 +187,7 @@
 			<%= link_to 'Back', projects_path, class: 'btn btn-link' %>
 		
 		</div><!-- /.container -->
-	      
-	</div>
+
+	<% end %>
 
 </section>  

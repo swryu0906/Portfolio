@@ -258,7 +258,7 @@ header {
 }
 
 #header-contact {
-	background: linear-gradient( rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1) ), url('https://s3.amazonaws.com/portfolio-0906/images-background/contact.jpg') no-repeat center center; 
+	background: linear-gradient( rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2) ), url('https://s3.amazonaws.com/portfolio-0906/images-background/contact.jpg') no-repeat center center; 
 	-webkit-background-size: cover;
 	-moz-background-size: cover;
 	-o-background-size: cover;
@@ -296,12 +296,17 @@ header {
 sectioin {
 	height: 100%;
 	position: relative;
-	z-index: initial;
 }
 
 
 // Carousel_Multi_Frames
 
+
+.carousel-multi-frames {
+	width: 100%;
+	margin: 0;
+	padding: 50px;
+}
 
 .carousel-multi-frames {
   .carousel-inner > .item {

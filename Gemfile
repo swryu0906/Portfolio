@@ -48,3 +48,6 @@ gem 'mini_magick', '~> 4.2.10'
 
 # Devise
 gem 'devise', '~> 3.5.2'
+
+# jQuery-turbolinks
+gem 'jquery-turbolinks', '~> 2.1.0'
