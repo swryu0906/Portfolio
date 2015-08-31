@@ -28,7 +28,26 @@
 	
 	<div class="carousel-multi-frames">
 		
-		<%= render 'shared/carousel_multi_frames' %>
+		<div class="col-md-12">
+		  <div class="carousel slide carousel-multi-frames" id="myCarousel">
+		    <div class="carousel-inner">
+
+
+			  <% @images.each do |image| %>
+
+			  	<div class="item <%= (image.id == @images.first.id) ? 'active': '' %>">
+			  		<div class="col-md-4">
+			 			<%= image_tag image.source.url(:small), class: 'img-responsive' %>
+			  		</div> 
+			  	</div>
+
+			  <% end %>
+
+		    </div><!--/.carousel-inner -->
+		    <a class="left carousel-control" href="#myCarousel" data-slide="prev"><i class="glyphicon glyphicon-chevron-left"></i></a>
+		    <a class="right carousel-control" href="#myCarousel" data-slide="next"><i class="glyphicon glyphicon-chevron-right"></i></a>
+		  </div>
+		</div>
 	
 	</div>
 
@@ -60,32 +79,69 @@
 			</div>
 
 			-->
+
+			<div class="project-details">
+
+				<p>
+					<strong>Name:</strong>
+					<%= @project.name %>
+				</p>
+
+				<p>
+					<strong>Description:</strong>
+					<%= @project.description %>
+				</p>
+
+				<p>
+					<strong>Details:</strong>
+					<%= @project.details %>
+				</p>
+
+				<p>
+					<strong>Url:</strong>
+					<%= @project.url %>
+				</p>
+
+			</div><!--/.project-details -->
 			
-			<p id="notice"><%= notice %></p>
+	        <hr>
 
-			<p>
-				<strong>Name:</strong>
-				<%= @project.name %>
-			</p>
+	        <div class="Images">
+	          
+	            <h1>Listing Images</h1>
 
-			<p>
-				<strong>Description:</strong>
-				<%= @project.description %>
-			</p>
+	            <table class="table table-hover table-bordered">
+	              <thead>
+	                <tr>
+	                  <th class="text-center">Image</th>
+	                  <th class="text-center">Name</th>
+	                  <th class="text-center">Description</th>
+	                  <th class="text-center">Source</th>
+	                  <th colspan="2"></th>
+	                </tr>
+	              </thead>
 
-			<p>
-				<strong>Details:</strong>
-				<%= @project.details %>
-			</p>
+	              <tbody>
+	                <% @images.each do |image| %>
+	                  <tr>
+	                    <td class="text-center"><%= image_tag image.source.url(:thumb), class: 'img-responsive center-block' %></td>
+	                    <td><%= image.name %></td>
+	                    <td><%= image.description %></td>
+	                    <td><%= image.source %></td>
+	                    <td><%= link_to 'Edit', edit_project_image_path(@project, image) %></td>
+	                    <td><%= link_to 'Destroy', project_image_path(@project, image), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+	                  </tr>
+	                <% end %>
+	              </tbody>
+	            </table>
 
-			<p>
-				<strong>Url:</strong>
-				<%= @project.url %>
-			</p>
+	            <br>
 
+				<%= link_to 'Add a new image', new_project_image_path(@project), class: 'btn btn-primary' %>
 
-			<%= link_to 'Add a new image', new_project_image_path(@project), class: 'btn btn-primary' %>
-
+	        </div><!-- /.images -->
+			    
+			<hr>
 
 			<%= link_to 'Edit', edit_project_path(@project), class: 'btn btn-link' %> |
 			<%= link_to 'Back', projects_path, class: 'btn btn-link' %>
