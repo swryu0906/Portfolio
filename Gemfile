@@ -51,3 +51,7 @@ gem 'devise', '~> 3.5.2'
 
 # jQuery-turbolinks
 gem 'jquery-turbolinks', '~> 2.1.0'
+
+# will_paginate
+gem 'will_paginate', '~> 3.0.7'
+gem 'will_paginate-bootstrap', '~> 1.0.1'
